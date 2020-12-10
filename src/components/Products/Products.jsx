@@ -4,15 +4,11 @@ import Product from './Product/Product'
 import useStyles from './styles'
 
 
-const products = [
-    { id:1 , name:'Shoes', description:'Running Shoes', price:'$10',image:"https://images.pexels.com/photos/6030263/pexels-photo-6030263.jpeg?cs=srgb&dl=pexels-polina-tankilevitch-6030263.jpg&fm=jpg"},
-    { id:2, name:'Watch', description:'Apple Smart watch', price:'$10',image:"https://images.pexels.com/photos/6030263/pexels-photo-6030263.jpeg?cs=srgb&dl=pexels-polina-tankilevitch-6030263.jpg&fm=jpg"},
-    
-]
 
 
 
-const Products = () => {
+
+const Products = ({products, handleAddToCart }) => {
 
     const classes = useStyles();
 
@@ -31,7 +27,7 @@ const Products = () => {
 
                             <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
 
-                                <Product product={product} />
+                                <Product product={product} handleAddToCart={ handleAddToCart }/>
 
                             </Grid>
 

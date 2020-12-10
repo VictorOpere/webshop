@@ -1,9 +1,9 @@
 import React from 'react'
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Badge, Typography } from '@material-ui/core';
 import useStyles from './styles';
 import { ShoppingCart } from '@material-ui/icons';
 
-const Navbar = () => {
+const Navbar = ({ totalItems }) => {
 
     const classes = useStyles();
 
@@ -16,7 +16,7 @@ const Navbar = () => {
           <div className={classes.grow} />
         
             <IconButton  aria-label="Show cart items" color="inherit">
-              <Badge badgeContent={2}  color="secondary">
+              <Badge badgeContent={ totalItems }  color="secondary">
                 <ShoppingCart />
               </Badge>
             </IconButton>
